@@ -13,11 +13,13 @@ class ProductScreen extends StatefulWidget {
 
 class _ProductScreenState extends State<ProductScreen> {
   final ProductData product;
+  String size;
 
   _ProductScreenState(this.product);
 
   @override
   Widget build(BuildContext context) {
+    final Color primaryColor = Theme.of(context).primaryColor;
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.purple,
@@ -53,52 +55,86 @@ class _ProductScreenState extends State<ProductScreen> {
                   maxLines: 3,
                 ),
                 Text(
-                 "R\$ ${product.price.toStringAsFixed(2)}",
+                  "R\$ ${product.price.toStringAsFixed(2)}",
                   style: TextStyle(
-                    fontSize: 25.0,
-                    fontWeight: FontWeight.bold,
-                    color: Colors.purple
+                      fontSize: 25.0,
+                      fontWeight: FontWeight.bold,
+                      color: Colors.purple),
+                ),
+                SizedBox(
+                  height: 16.0,
+                ),
+                Text(
+                  "Tamanho",
+                  style: TextStyle(
+                    fontSize: 16.00,
+                    fontWeight: FontWeight.w500,
+                  ),
+                ),
+                SizedBox(
+                  height: 37.0,
+                  child: GridView(
+                    padding: EdgeInsets.symmetric(vertical: 3.0),
+                    scrollDirection: Axis.horizontal,
+                    gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                        crossAxisCount: 1,
+                        mainAxisSpacing: 8.0,
+                        childAspectRatio: 0.5),
+                    children: product.sizes.map((s) {
+                      return GestureDetector(
+                        onTap: () {
+                          setState(() {
+                            size = s;
+                          });
+                        },
+                        child: Container(
+                          decoration: BoxDecoration(
+                            borderRadius:
+                                BorderRadius.all(Radius.circular(4.0)),
+                            border: Border.all(
+                                color: s == size
+                                    ? Colors.purple
+                                    : Colors.grey[500],
+                                width: 3.0),
+                          ),
+                          width: 50.0,
+                          alignment: Alignment.center,
+                          child: Text(s),
+                        ),
+                      );
+                    }).toList(),
+                  ),
+                ),
+                SizedBox(
+                  height: 20.0,
+                ),
+                SizedBox(
+                  height: 50.0,
+                  child: RaisedButton(
+                    onPressed: size != null ? () {} : null,
+                    child: Text(
+                      "Adicionar ao Carrinho",
+                      style: TextStyle(
+                          fontSize: 18.0, fontWeight: FontWeight.bold),
+                    ),
+                    color: Colors.purple,
+                    textColor: Colors.white,
                   ),
                 ),
                 SizedBox(
                   height: 16.0,
                 ),
-                Text("Tamanho",
-                style: TextStyle(
-                  fontSize: 16.00,
-                  fontWeight: FontWeight.w500,
+                Text(
+                  "Descrição",
+                  style: TextStyle(fontSize: 18.0, fontWeight: FontWeight.bold),
                 ),
-                ),
-                SizedBox(
-                    height: 34.0,
-                    child: GridView(
-                      padding: EdgeInsets.symmetric(vertical: 4.0),
-                      scrollDirection: Axis.horizontal,
-                      gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                          crossAxisCount: 1,
-                          mainAxisSpacing: 8.0,
-                          childAspectRatio: 0.5
-                      ),
-                      children: product.sizes.map(
-                          (s){
-                        return GestureDetector(
-                          child: Container(
-                            decoration: BoxDecoration(
-                              borderRadius: BorderRadius.all(Radius.circular(4.0)),
-                              border: Border.all(
-                              color: Colors.grey[500],
-                              ),
-                            ),
-                            width: 50.0,
-                            alignment: Alignment.center,
-                            child: Text(s),
-                          ),
-                        );
-                          }
-                      ).toList(),
-                   ),
-                ),
-                ],
+                Text(
+                  product.description,
+                  style: TextStyle(
+                    fontSize: 16.0,
+                  ),
+                )
+              ],
             ),
           )
         ],
