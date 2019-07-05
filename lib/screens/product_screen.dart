@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:loja_virtual/datas/product_data.dart';
 import 'package:carousel_pro/carousel_pro.dart';
+import 'package:image_picker/image_picker.dart';
+
 
 class ProductScreen extends StatefulWidget {
   final ProductData product;
@@ -14,6 +16,8 @@ class ProductScreen extends StatefulWidget {
 class _ProductScreenState extends State<ProductScreen> {
   final ProductData product;
   String size;
+
+
 
   _ProductScreenState(this.product);
 
@@ -133,7 +137,44 @@ class _ProductScreenState extends State<ProductScreen> {
                   style: TextStyle(
                     fontSize: 16.0,
                   ),
-                )
+                ),
+                SizedBox(
+                  height: 16.0,
+                ),
+                Text(
+                  "Especificação",
+                  style: TextStyle(fontSize: 18.0, fontWeight: FontWeight.bold),
+                ),
+                Text(
+                  product.specification,
+                  style: TextStyle(
+                    fontSize: 16.0,
+                  ),
+                ),
+                SizedBox(
+                  height: 16.0,
+                ),
+                SizedBox(
+                  height: 50.0,
+                  child: RaisedButton(
+                    onPressed: () async {
+                      ImagePicker.pickImage(source: ImageSource.camera)
+                          .then((file) {
+                        if (file == null) return;
+                        setState(() {
+
+                        });
+                      });
+                    },
+                    child: Text(
+                      "Visualizar em Realidade Aumentada",
+                      style: TextStyle(
+                          fontSize: 18.0, fontWeight: FontWeight.bold),
+                    ),
+                    color: Colors.purple,
+                    textColor: Colors.white,
+                  ),
+                ),
               ],
             ),
           )

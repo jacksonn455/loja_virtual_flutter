@@ -4,7 +4,7 @@ class ProductData {
 
   String category;
   String id;
-
+  String specification;
   String title;
   String description;
 
@@ -17,6 +17,7 @@ class ProductData {
     id = snapshot.documentID;
     title = snapshot.data["title"];
     description = snapshot.data["description"];
+    specification = snapshot.data["specification"];
     price = snapshot.data["price"] + 0.0;
     images = snapshot.data["images"];
     sizes = snapshot.data["sizes"];
@@ -26,6 +27,7 @@ class ProductData {
     return {
       "title": title,
       "description": description,
+      "spefication": specification,
       "price": price
     };
   }
