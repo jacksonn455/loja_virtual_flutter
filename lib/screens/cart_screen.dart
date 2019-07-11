@@ -2,12 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:loja_virtual/models/cart_model.dart';
 import 'package:loja_virtual/models/user_model.dart';
 import 'package:loja_virtual/screens/login_screen.dart';
-import 'package:loja_virtual/titles/cart_title.dart';
+import 'package:loja_virtual/screens/order_screen.dart';
+import 'package:loja_virtual/tiles/cart_tile.dart';
 import 'package:loja_virtual/widgets/cart_price.dart';
 import 'package:loja_virtual/widgets/discount_card.dart';
 import 'package:loja_virtual/widgets/ship_card.dart';
 import 'package:scoped_model/scoped_model.dart';
-
 
 class CartScreen extends StatelessWidget {
   @override
@@ -45,11 +45,8 @@ class CartScreen extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.stretch,
               mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget>[
-                Icon(
-                  Icons.remove_shopping_cart,
-                  size: 80.0,
-                  color: Colors.purple,
-                ),
+                Icon(Icons.remove_shopping_cart,
+                    size: 80.0, color: Colors.purple),
                 SizedBox(
                   height: 16.0,
                 ),
@@ -62,52 +59,56 @@ class CartScreen extends StatelessWidget {
                   height: 16.0,
                 ),
                 RaisedButton(
-                    child: Text(
-                      "Entrar",
-                      style: TextStyle(fontSize: 18.0),
-                    ),
-                    textColor: Colors.white,
-                    color: Colors.purple,
-                    onPressed: () {
-                      Navigator.of(context).push(MaterialPageRoute(
-                          builder: (context) => LoginScreen()));
-                    })
+                  child: Text(
+                    "Entrar",
+                    style: TextStyle(fontSize: 18.0),
+                  ),
+                  textColor: Colors.white,
+                  color: Colors.purple,
+                  onPressed: () {
+                    Navigator.of(context).push(
+                        MaterialPageRoute(builder: (context) => LoginScreen()));
+                  },
+                )
               ],
             ),
           );
         } else if (model.products == null || model.products.length == 0) {
           return Container(
-              padding: EdgeInsets.all(16.0),
-              child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.stretch,
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: <Widget>[
-                    Icon(
-                      Icons.remove_shopping_cart,
-                      size: 80.0,
-                      color: Colors.purple,
-                    ),
-                    SizedBox(
-                      height: 16.0,
-                    ),
-                    Text(
-                      "Nenhum produto no carrinho",
-                      style: TextStyle(
-                          fontSize: 20.0, fontWeight: FontWeight.bold),
-                      textAlign: TextAlign.center,
-                    ),
-                  ]));
+            padding: EdgeInsets.all(16.0),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.stretch,
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: <Widget>[
+                Icon(Icons.remove_shopping_cart,
+                    size: 80.0, color: Colors.purple),
+                SizedBox(
+                  height: 16.0,
+                ),
+                Text(
+                  "Nenhum produto no carrinho!",
+                  style: TextStyle(fontSize: 20.0, fontWeight: FontWeight.bold),
+                  textAlign: TextAlign.center,
+                ),
+              ],
+            ),
+          );
         } else {
           return ListView(
             children: <Widget>[
               Column(
                 children: model.products.map((product) {
-                  return CartTitle(product);
+                  return CartTile(product);
                 }).toList(),
               ),
               DiscountCard(),
               ShipCard(),
-              CartPrice((){}),
+              CartPrice(() async {
+                String orderId = await model.finishOrder();
+                if (orderId != null)
+                  Navigator.of(context).pushReplacement(MaterialPageRoute(
+                      builder: (context) => OrderScreen(orderId)));
+              }),
             ],
           );
         }

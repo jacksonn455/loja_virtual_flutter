@@ -3,14 +3,12 @@ import 'package:flutter/material.dart';
 import 'package:loja_virtual/datas/cart_product.dart';
 import 'package:loja_virtual/datas/product_data.dart';
 import 'package:loja_virtual/models/cart_model.dart';
-import 'package:loja_virtual/models/user_model.dart';
-import 'package:loja_virtual/titles/drawer_title.dart';
 
-class CartTitle extends StatelessWidget {
+class CartTile extends StatelessWidget {
 
   final CartProduct cartProduct;
 
-  CartTitle(this.cartProduct);
+  CartTile(this.cartProduct);
 
   @override
   Widget build(BuildContext context) {
@@ -47,26 +45,26 @@ class CartTitle extends StatelessWidget {
                   Text(
                     "R\$ ${cartProduct.productData.price.toStringAsFixed(2)}",
                     style: TextStyle(
-                        color: Colors.purple,
-                        fontSize: 20.0,
-                        fontWeight: FontWeight.bold
+                      color:  Colors.purple,
+                      fontSize: 16.0,
+                      fontWeight: FontWeight.bold
                     ),
                   ),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: <Widget>[
                       IconButton(
-                        icon: Icon(Icons.remove),
-                        color: Colors.purple,
-                        onPressed: cartProduct.quantity > 1 ?
-                            (){
-                          CartModel.of(context).decProduct(cartProduct);
-                        } : null,
+                          icon: Icon(Icons.remove),
+                          color:  Colors.purple,
+                          onPressed: cartProduct.quantity > 1 ?
+                          (){
+                            CartModel.of(context).decProduct(cartProduct);
+                          } : null,
                       ),
                       Text(cartProduct.quantity.toString()),
                       IconButton(
                         icon: Icon(Icons.add),
-                        color: Colors.purple,
+                        color:  Colors.purple,
                         onPressed: (){
                           CartModel.of(context).incProduct(cartProduct);
                         },
@@ -89,11 +87,11 @@ class CartTitle extends StatelessWidget {
     }
 
     return Card(
-        margin: EdgeInsets.symmetric(horizontal: 8.0, vertical: 4.0),
-        child: cartProduct.productData == null ?
+      margin: EdgeInsets.symmetric(horizontal: 8.0, vertical: 4.0),
+      child: cartProduct.productData == null ?
         FutureBuilder<DocumentSnapshot>(
           future: Firestore.instance.collection("products").document(cartProduct.category)
-              .collection("items").document(cartProduct.pid).get(),
+          .collection("items").document(cartProduct.pid).get(),
           builder: (context, snapshot){
             if(snapshot.hasData){
               cartProduct.productData = ProductData.fromDocument(snapshot.data);
@@ -107,7 +105,7 @@ class CartTitle extends StatelessWidget {
             }
           },
         ) :
-        _buildContent()
+          _buildContent()
     );
   }
 }

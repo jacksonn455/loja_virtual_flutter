@@ -1,14 +1,13 @@
 import 'package:flutter/material.dart';
 
-class DrawerTitle extends StatelessWidget {
+class DrawerTile extends StatelessWidget {
 
   final IconData icon;
   final String text;
   final PageController controller;
   final int page;
 
-
-  DrawerTitle(this.icon, this.text, this.controller, this.page);
+  DrawerTile(this.icon, this.text, this.controller, this.page);
 
   @override
   Widget build(BuildContext context) {
@@ -29,13 +28,11 @@ class DrawerTitle extends StatelessWidget {
                 color: controller.page.round() == page ?
                 Colors.purple : Colors.grey[700],
               ),
-              SizedBox(
-                width: 32.0,
-              ),
+              SizedBox(width: 32.0,),
               Text(
                 text,
                 style: TextStyle(
-                    fontSize: 16.0,
+                  fontSize: 16.0,
                   color: controller.page.round() == page ?
                   Colors.purple : Colors.grey[700],
                 ),

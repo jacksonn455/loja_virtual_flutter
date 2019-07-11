@@ -61,14 +61,14 @@ class CartPrice extends StatelessWidget {
                     Text("Total",
                       style: TextStyle(fontWeight: FontWeight.w500),),
                     Text("R\$ ${(price + ship - discount).toStringAsFixed(2)}",
-                      style: TextStyle(color: Colors.purple, fontSize: 20.0),)
+                      style: TextStyle(color:  Colors.purple, fontSize: 16.0),)
                   ],
                 ),
                 SizedBox(height: 12.0,),
                 RaisedButton(
                   child: Text("Finalizar Pedido"),
                   textColor: Colors.white,
-                  color: Colors.purple,
+                  color:  Colors.purple,
                   onPressed: buy,
                 )
               ],

@@ -119,10 +119,10 @@ class _SignUpScreenState extends State<SignUpScreen> {
 
   void _onSuccess(){
     _scaffoldKey.currentState.showSnackBar(
-        SnackBar(content: Text("Usuário criado com sucesso!"),
-          backgroundColor: Colors.purple,
-          duration: Duration(seconds: 2),
-        )
+      SnackBar(content: Text("Usuário criado com sucesso!"),
+        backgroundColor: Colors.purple,
+        duration: Duration(seconds: 2),
+      )
     );
     Future.delayed(Duration(seconds: 2)).then((_){
       Navigator.of(context).pop();

@@ -4,9 +4,10 @@ class ProductData {
 
   String category;
   String id;
-  String specification;
+
   String title;
   String description;
+  String specification;
 
   double price;
 

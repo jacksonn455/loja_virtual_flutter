@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:loja_virtual/models/user_model.dart';
-import 'package:loja_virtual/screens/singup_screen.dart';
+import 'package:loja_virtual/screens/signup_screen.dart';
 import 'package:scoped_model/scoped_model.dart';
 
 class LoginScreen extends StatefulWidget {
@@ -19,7 +19,7 @@ class _LoginScreenState extends State<LoginScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        key: _scaffoldKey,
+      key: _scaffoldKey,
         appBar: AppBar(
           backgroundColor: Colors.purple,
           title: Text("Entrar"),
@@ -87,9 +87,7 @@ class _LoginScreenState extends State<LoginScreen> {
                           model.recoverPass(_emailController.text);
                           _scaffoldKey.currentState.showSnackBar(
                               SnackBar(content: Text("Confira seu e-mail!"),
-                                backgroundColor: Theme
-                                    .of(context)
-                                    .primaryColor,
+                                backgroundColor: Colors.purple,
                                 duration: Duration(seconds: 2),
                               )
                           );
