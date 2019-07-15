@@ -33,6 +33,9 @@ dependencies:
   flutter_launcher_icons: ^0.7.2
   image_picker: ^0.6.0+3
   flare_flutter: 1.0.2
+  bloc_pattern: ^1.5.2
+  rxdart: ^0.21.0
+  shimmer: ^1.0.0
 
 
 

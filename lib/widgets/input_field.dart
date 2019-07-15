@@ -5,8 +5,10 @@ class InputField extends StatelessWidget {
   final String hint;
   final bool obscure;
   final IconData icon;
+  final Stream<String> stream;
+  final Function(String) onChanged;
 
-  InputField({this.hint, this.obscure, this.icon});
+  InputField({this.icon, this.hint, this.obscure, this.stream, this.onChanged});
 
   @override
   Widget build(BuildContext context) {
@@ -25,22 +27,22 @@ class InputField extends StatelessWidget {
           color: Colors.white,
         ),
         decoration: InputDecoration(
-            icon: Icon(
-              icon,
-              color: Colors.white,
-            ),
-            border: InputBorder.none,
-            hintText: hint,
-            hintStyle: TextStyle(
-              color: Colors.white,
-              fontSize: 15,
-            ),
-            contentPadding: EdgeInsets.only(
-                top: 30,
-                right: 30,
-                bottom: 30,
-                left: 5
-            )
+          icon: Icon(
+            icon,
+            color: Colors.white,
+          ),
+          border: InputBorder.none,
+          hintText: hint,
+          hintStyle: TextStyle(
+            color: Colors.white,
+            fontSize: 15,
+          ),
+          contentPadding: EdgeInsets.only(
+            top: 30,
+            right: 30,
+            bottom: 30,
+            left: 5
+          )
         ),
       ),
     );
