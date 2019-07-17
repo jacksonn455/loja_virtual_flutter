@@ -8,7 +8,7 @@ O sistema foi desenvolvido para aprendrer a linguagem de programação Dart com 
  --------------------
  Tela do Icone:
  
- ![](https://github.com/jacksonn455/loja_virtual_flutter/blob/master/foto%20.png)
+ ![](https://github.com/jacksonn455/loja_virtual_flutter/blob/master/foto.png)
 --------------------
 Tela de Splash feita com Flare no https://www.2dimensions.com/
 
