@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:loja_virtual/models/user_model.dart';
 import 'package:loja_virtual/screens/NewLogin_screen.dart';
 import 'package:loja_virtual/screens/home_screen.dart';
+import 'package:loja_virtual/screens/login_screen.dart';
 import 'package:scoped_model/scoped_model.dart';
 import 'package:loja_virtual/models/cart_model.dart';
 
@@ -23,7 +24,7 @@ class MyApp extends StatelessWidget {
                   primarySwatch: Colors.blue,
                   primaryColor: Color.fromARGB(255, 4, 125, 141)),
               debugShowCheckedModeBanner: false,
-              home: NewLoginScreen()),
+              home: Splash()),
         );
       }),
     );
@@ -53,7 +54,7 @@ class _SplashState extends State<Splash> {
   @override
   void initState() {
     super.initState();
-    Future.delayed(Duration(seconds: 5)).then((_) {
+    Future.delayed(Duration(seconds: 4)).then((_) {
       Navigator.of(context).pushReplacement(
           MaterialPageRoute(builder: (context) => HomeScreen()));
     });
