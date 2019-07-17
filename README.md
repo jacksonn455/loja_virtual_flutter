@@ -40,9 +40,9 @@ Tela de Splash feita com Flare no https://www.2dimensions.com/
   --------------------
  Tela de lojas:
  
- ![](https://github.com/jacksonn455/loja_virtual_flutter/blob/master/foto%20(9).png)
+ ![](https://github.com/jacksonn455/loja_virtual_flutter/blob/master/foto%20(11).png)
  --------------------
  Tela de pedidos feitos
  
- ![](https://github.com/jacksonn455/loja_virtual_flutter/blob/master/foto%20(10).png)
+ ![](https://github.com/jacksonn455/loja_virtual_flutter/blob/master/foto%20(12).png)
  
