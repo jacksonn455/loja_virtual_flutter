@@ -21,6 +21,7 @@ class _NewLoginScreenState extends State<NewLoginScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       key: _scaffoldKey,
+      appBar: AppBar(backgroundColor: Colors.transparent),
       body: ScopedModelDescendant<UserModel>(
         builder: (context, child, model) {
           if (model.isLoading)
@@ -43,11 +44,11 @@ class _NewLoginScreenState extends State<NewLoginScreen> {
                       Column(
                         children: <Widget>[
                           Padding(
-                            padding: EdgeInsets.only(top: 70, bottom: 32),
+                            padding: EdgeInsets.only(top: 10, bottom: 10),
                             child: Image.asset(
                               "images/user1.png",
-                              width: 150,
-                              height: 150,
+                              width: 130,
+                              height: 130,
                               fit: BoxFit.contain,
                             ),
                           ),
@@ -58,7 +59,7 @@ class _NewLoginScreenState extends State<NewLoginScreen> {
                               hintStyle: TextStyle(
                                   color: Colors.white,
                                   fontFamily: "WorkSansLight",
-                                  fontSize: 18.0),
+                                  fontSize: 15.0),
                               filled: true,
                               fillColor: Colors.white24,
                               hintText: "E-mail",
@@ -79,7 +80,7 @@ class _NewLoginScreenState extends State<NewLoginScreen> {
                             },
                           ),
                           SizedBox(
-                            height: 16.0,
+                            height: 10.0,
                           ),
                           TextFormField(
                             style: TextStyle(color: Colors.white),
@@ -88,7 +89,7 @@ class _NewLoginScreenState extends State<NewLoginScreen> {
                               hintStyle: TextStyle(
                                   color: Colors.white,
                                   fontFamily: "WorkSansLight",
-                                  fontSize: 18.0),
+                                  fontSize: 15.0),
                               filled: true,
                               fillColor: Colors.white24,
                               hintText: "Senha",
@@ -126,7 +127,7 @@ class _NewLoginScreenState extends State<NewLoginScreen> {
                                       .showSnackBar(SnackBar(
                                     content: Text("Confira seu e-mail!"),
                                     backgroundColor: Colors.purple,
-                                    duration: Duration(seconds: 2),
+                                    duration: Duration(seconds: 3),
                                   ));
                                 }
                               },
@@ -134,17 +135,17 @@ class _NewLoginScreenState extends State<NewLoginScreen> {
                                 "Esqueci minha senha",
                                 textAlign: TextAlign.right,
                                 style: TextStyle(
-                                    color: Colors.white, fontSize: 15.0),
+                                    color: Colors.white, fontSize: 13.0),
                               ),
                               padding: EdgeInsets.zero,
                             ),
                           ),
                           SizedBox(
-                            height: 16,
+                            height: 10,
                           ),
                           SizedBox(
-                            height: 80,
-                            width: 80,
+                            height: 75,
+                            width: 75,
                             child: new FloatingActionButton(
                               backgroundColor: Colors.white30,
                               child: Text(

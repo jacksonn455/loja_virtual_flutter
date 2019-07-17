@@ -1,7 +1,7 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:loja_virtual/models/user_model.dart';
-import 'package:loja_virtual/screens/login_screen.dart';
+import 'package:loja_virtual/screens/NewLogin_screen.dart';
 import 'package:loja_virtual/tiles/order_tile.dart';
 
 class OrdersTab extends StatelessWidget {
@@ -51,7 +51,7 @@ class OrdersTab extends StatelessWidget {
               color: Colors.purple,
               onPressed: (){
                 Navigator.of(context).push(
-                    MaterialPageRoute(builder: (context)=>LoginScreen())
+                    MaterialPageRoute(builder: (context)=>NewLoginScreen())
                 );
               },
             )

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:loja_virtual/models/cart_model.dart';
 import 'package:loja_virtual/models/user_model.dart';
-import 'package:loja_virtual/screens/login_screen.dart';
+import 'package:loja_virtual/screens/NewLogin_screen.dart';
 import 'package:loja_virtual/screens/order_screen.dart';
 import 'package:loja_virtual/tiles/cart_tile.dart';
 import 'package:loja_virtual/widgets/cart_price.dart';
@@ -67,7 +67,7 @@ class CartScreen extends StatelessWidget {
                   color: Colors.purple,
                   onPressed: () {
                     Navigator.of(context).push(
-                        MaterialPageRoute(builder: (context) => LoginScreen()));
+                        MaterialPageRoute(builder: (context) => NewLoginScreen()));
                   },
                 )
               ],

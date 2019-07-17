@@ -6,7 +6,7 @@ class SignUpButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return FlatButton(
       padding: EdgeInsets.only(
-        top: 30
+        top: 20
       ),
       onPressed: (){
         Navigator.of(context).pushReplacement(
