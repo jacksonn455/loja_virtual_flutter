@@ -6,7 +6,7 @@ Flutter's Clothing
 O sistema foi desenvolvido para aprendrer a linguagem de programação Dart com o framework Flutter, utilizando autenticação de login e senha com banco de dados firebase .
 
 --------------------
-Tela de Splash:
+Tela de Splash feita com Flare no https://www.2dimensions.com/
 
  ![](https://github.com/jacksonn455/loja_virtual_flutter/blob/master/foto%20(1).png)
  --------------------
@@ -37,4 +37,12 @@ Tela de Splash:
  Tela do carrinho de compras
  
  ![](https://github.com/jacksonn455/loja_virtual_flutter/blob/master/foto%20(8).png)
+  --------------------
+ Tela de lojas:
+ 
+ ![](https://github.com/jacksonn455/loja_virtual_flutter/blob/master/foto%20(9).png)
+ --------------------
+ Tela de pedidos feitos
+ 
+ ![](https://github.com/jacksonn455/loja_virtual_flutter/blob/master/foto%20(10).png)
  
