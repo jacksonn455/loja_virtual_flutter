@@ -5,6 +5,10 @@ Flutter's Clothing
 
 O sistema foi desenvolvido para aprendrer a linguagem de programação Dart com o framework Flutter, utilizando autenticação de login e senha com banco de dados firebase .
 
+ --------------------
+ Tela do Icone:
+ 
+ ![](https://github.com/jacksonn455/loja_virtual_flutter/blob/master/foto%20.png)
 --------------------
 Tela de Splash feita com Flare no https://www.2dimensions.com/
 
