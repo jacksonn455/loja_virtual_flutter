@@ -15,7 +15,7 @@ O sistema foi desenvolvido para aprendrer a linguagem de programação Dart com 
  --------------------
  ![](https://github.com/jacksonn455/loja_virtual_flutter/blob/master/foto%20(4).png)
  --------------------
- ![](https://github.com/jacksonn455/loja_virtual_flutter/blob/master/foto%20(5).png)
+ ![](https://github.com/jacksonn455/loja_virtual_flutter/blob/master/foto%20(0).png)
  --------------------
  ![](https://github.com/jacksonn455/loja_virtual_flutter/blob/master/foto%20(6).png)
  --------------------
